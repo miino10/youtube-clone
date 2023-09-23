@@ -7,74 +7,84 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { MdOutlineVideoLibrary, MdVideoLibrary } from "react-icons/md";
 import { MdSubscriptions } from "react-icons/md";
 const Sidebar = () => {
- const [activeIcon, setActiveIcon] = useState(null);
- const handleIconClick = (iconName:any) => {
-   if (activeIcon === iconName) {
-     // If the same icon is clicked again, deactivate it
-     setActiveIcon(null);
-   } else {
-     // Activate the clicked icon and deactivate the previously active icon
-     setActiveIcon(iconName);
-   }
- };
+  const [activeIcon, setActiveIcon] = useState(null);
+  const handleIconClick = (iconName: any) => {
+    if (activeIcon === iconName) {
+      // If the same icon is clicked again, deactivate it
+      setActiveIcon(null);
+    } else {
+      // Activate the clicked icon and deactivate the previously active icon
+      setActiveIcon(iconName);
+    }
+  };
 
   return (
-    <div className="w-[13vh]  flex flex-col items-center  mx-1 gap-1 ">
+    <div className="min-w-[2vw] mx-2 md:mx-0  h-fit md:min-w-[2vw] lg:w-[8vw] xl:w-[6vw] lg:py-2 lg:gap-3 xl:gap-4 xl:py-4   flex flex-col items-center  bg-white sticky left-0  top-14 ">
       <button
         onClick={() => handleIconClick("home")}
         className={
-          "flex flex-col gap-1 justify-center items-center hover:bg-gray-100 w-full px-1 py-5 rounded-xl"
+          "flex flex-col gap-1 justify-center items-center hover:bg-gray-100 w-full px-1 py-2 rounded-xl"
         }
       >
         {activeIcon === "home" ? (
-          <GoHomeFill className="text-xl" />
+          <GoHomeFill className=" w-[4vw]  h-[4vw] md:w-[3vw] lg:w-[2vw] lg:h-[2vw] xl:w-[20px] xl:h-[20px]" />
         ) : (
-          <GoHome className="text-xl" />
+          <GoHome className="w-[4vw] h-[4vw] md:w-[3vw] lg:w-[2vw] lg:h-[2vw] xl:w-[30px] xl:h-[20px]" />
         )}
 
-        <p className="text-xs">Home</p>
+        <p className="text-[6px] lg:text-xs xl:text-[10px]">Home</p>
       </button>
 
       <div className="flex flex-col items-center gap-2">
         <button onClick={() => handleIconClick("shorts")}>
           {activeIcon === "shorts" ? (
-            <div className="relative w-11 h-6">
+            <div className="relative w-[4vw]  h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[30px] xl:h-[20px]">
               <Image src={"/shortsblack.png"} alt={""} fill />
             </div>
           ) : (
-            <div className="relative w-6 h-6">
+            <div className="relative w-[4vw]  h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[22px] xl:h-[20px]">
               <Image src={"/shorts.png"} alt={""} fill />
             </div>
           )}
         </button>
 
-        <p className="text-xs">Shorts</p>
+        <p className="text-[6px] lg:text-xs xl:text-[10px]">Shorts</p>
       </div>
 
       <button
         onClick={() => handleIconClick("Subscriptions")}
-        className="flex flex-col gap-1 justify-center items-center hover:bg-gray-100 w-full px-1 py-5 rounded-xl"
+        className="flex  flex-col gap-1 xl:gap-2 justify-center items-center hover:bg-gray-100 w-full px-1 py-3 xl:py-2 rounded-xl"
       >
         {activeIcon === "Subscriptions" ? (
-          <MdSubscriptions className={"text-xl"} />
+          <MdSubscriptions
+            className={
+              "w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[30px] xl:h-[20px]"
+            }
+          />
         ) : (
-          <MdOutlineSubscriptions className={"text-xl"} />
+          <MdOutlineSubscriptions
+            className={
+              "w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[22px] xl:h-[20px]"
+            }
+          />
         )}
 
-        <p className="text-xs">Subscriptions</p>
+        <p className="text-[5px] font-thin lg:text-xs xl:text-[10px]">
+          Subscriptions
+        </p>
       </button>
 
       <button
         onClick={() => handleIconClick("library")}
-        className="flex flex-col gap-1 justify-center items-center hover:bg-gray-100 w-full px-1 py-5 rounded-xl"
+        className="flex flex-col gap-1  justify-center items-center hover:bg-gray-100 w-full px-1 py-3 xl:py-2 rounded-xl"
       >
         {activeIcon === "library" ? (
-          <MdVideoLibrary className="text-xl" />
+          <MdVideoLibrary className="w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[25px] xl:h-[30px]" />
         ) : (
-          <MdOutlineVideoLibrary className="text-xl" />
+          <MdOutlineVideoLibrary className="w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] lg:h-[2vw] lg:w-[2vw] xl:w-[25px] xl:h-[30px]" />
         )}
 
-        <p className="text-xs">Library</p>
+        <p className="text-[6px] lg:text-xs xl:text-[10px]">Library</p>
       </button>
     </div>
   );

@@ -1,9 +1,10 @@
-import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
+// import Card from "./components/card";
 
 export default function Home() {
   return (
-    <main>
-      <Sidebar />
-    </main>
+    <div>
+      <Main />
+    </div>
   );
 }
