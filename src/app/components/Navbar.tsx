@@ -5,15 +5,16 @@ import { MdKeyboardVoice } from "react-icons/md";
 import { GoSearch } from "react-icons/go";
 import { BsBell } from "react-icons/bs";
 import { TbVideoPlus } from "react-icons/tb";
+import Link from "next/link";
 const Navbar = () => {
   return (
-    <div className="bg-white flex items-center justify-between gap-1 md:gap-2 px-2 md:px-2 lg:px-8 xl:px-7 2xl:h-[5vw] 2xl:px-12  sticky top-0 z-50">
+    <div className="bg-white flex items-center justify-between gap-1 md:gap-2 px-2 md:px-2 lg:px-8 xl:px-7 2xl:h-[5vw] 2xl:px-12  sticky top-0 z-50 ">
       {/* youtube-logo and burtger icon */}
-      <div className=" flex items-center gap-2 md:gap-4 lg:gap-4 xl:gap-5">
+      <div className=" flex items-center gap-2 md:gap-4 lg:gap-4 xl:gap-6 2xl:gap-12">
         <div>
-          <VscMenu className="text-sm md:text-xl lg:text-xl  2xl:text-5xl" />
+          <VscMenu className="text-sm md:text-xl lg:text-xl xl:text-2xl  2xl:text-5xl xl:w-[35px]" />
         </div>
-        <div className="relative  w-[20vw] h-10 md:w-[8vw] xl:w-[7vw] 2xl:h-[6vw] md:h-14">
+        <div className="relative  w-[20vw] h-10 md:w-[8vw] xl:w-[7vw]  2xl:h-[6vw] md:h-14">
           <Image src={"/youtube.png"} alt={""} fill />
         </div>
       </div>
@@ -41,7 +42,7 @@ const Navbar = () => {
       {/* profile-part */}
       <div className="flex lg:gap-4 2xl:gap-6   lg:w-[15vw] 2xl:w-[14vw] justify-center xl:justify-end ">
         <div className="md:flex md:items-center hidden hover:bg-gray-200  rounded-full lg:w-[3vw] lg:h-[3vw]  p-2 ">
-          <TbVideoPlus className="text-xl lg:text-4xl 2xl:text-6xl" />
+          <TbVideoPlus className="text-xl lg:text-6xl 2xl:text-6xl" />
         </div>
 
         <div className=" relative hidden md:block ">
@@ -54,14 +55,16 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[3vw] lg:h-[3vw] relative flex items-center ">
-          <Image
-            src={"/profile.jpg"}
-            alt={""}
-            fill
-            className="rounded-full object-cover border-gray-400 border"
-          />
-        </div>
+        <Link href={"/mmm"}>
+          <div className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[3vw] lg:h-[3vw] relative flex items-center ">
+            <Image
+              src={"/profile.jpg"}
+              alt={""}
+              fill
+              className="rounded-full object-cover border-gray-400 border"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
