@@ -241,3 +241,15 @@ export const shortsData = [
     views: "30K",
   },
 ];
+
+export const videoData = [
+  {
+    id:1,
+    name:"Abdifatah vlogs",
+    title:
+      "Let's build Video Blog using NextJs | Tailwindcss | Firebase | GSAP Animations - For Beginners",
+    likes: 22,
+    subscribers: "20M",
+    img: "/papua1.jpg",
+  },
+];

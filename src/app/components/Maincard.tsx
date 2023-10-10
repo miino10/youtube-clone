@@ -9,7 +9,7 @@ const card = () => {
       <div className="grid md:grid-cols-2 xl:gap-3       xl:grid-cols-3 xl:h-fit xl:min-w-[12vw] gap-6 md:gap-3       min-w-[30vw] md:min-w-[40vw]     xl:ml-8 xl:mr-8 ">
         {mainCardsData.map((data) => (
           <div
-            className=" mx-3  lg:mx-8 xl:mx-0     min-w-[10vw] md:min-w-[10vw] md:h-[48vw] lg:min-w-[40vw]  lg:h-[43vw] xl:min-w-[18vw]  xl:h-[26vw]  flex flex-col mt-4  lg:mb-4 xl:mb-0  items-center cursor-pointer "
+            className=" mx-3  lg:mx-8 xl:mx-0      min-w-[10vw] md:min-w-[10vw] md:h-[48vw] lg:min-w-[40vw]  lg:h-[43vw] xl:min-w-[18vw]  xl:h-[26vw]  flex flex-col mt-4  lg:mb-4 xl:mb-0  items-center cursor-pointer "
             key={data.id}
           >
             {/* card1 */}

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import { shortsData } from "../../../data";
 import Link from "next/link";
@@ -50,89 +50,102 @@ export const Shortscard = () => {
             </div>
           </div>
           {shortsHidden ? (
-            <div className="grid grid-cols-2 gap-4 lg:gap-0 my-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  lg:w-[90] xl:w-[90vw]  lg:ml-7  ">
-              {shortsData.slice(0, 5).map((data) => (
-                <div
-                  className=" w-[40vw] md:w-[20vw] lg:w-[20vw] xl:w-[17vw] mb-5"
-                  key={data.id}
-                >
-                  <Link href={"/"}>
-                    <div className="w-[40vw] md:w-[28vw] lg:w-[20vw] xl:w-[17vw] h-[70vw] md:h-[50vw] lg:h-[40vw] xl:h-[30vw] relative">
-                      <Image
-                        src={data.profile}
-                        alt={""}
-                        fill
-                        className="object-cover rounded-md lg:rounded-xl"
-                      />
-                    </div>
-                  </Link>
-                  <div className="flex justify-between pt-2">
+            <div className="flex flex-col">
+              <div className="grid grid-cols-2 gap-4 lg:gap-0 my-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  lg:w-[90] xl:w-[90vw]  lg:ml-7  ">
+                {shortsData.slice(0, 5).map((data) => (
+                  <div
+                    className=" w-[40vw] md:w-[20vw] lg:w-[20vw] xl:w-[17vw] mb-5"
+                    key={data.id}
+                  >
                     <Link href={"/"}>
-                      <div className="flex flex-col gap-1">
-                        <p className="line-clamp-2 text-base 2xl:text-2xl">
-                          {data.title}
-                        </p>
-                        <p className="line-clamp-1  text-xs 2xl:text-lg">
-                          {data.views} views
-                        </p>
+                      <div className="w-[40vw] md:w-[28vw] lg:w-[20vw] xl:w-[17vw] h-[70vw] md:h-[50vw] lg:h-[40vw] xl:h-[30vw] relative">
+                        <Image
+                          src={data.profile}
+                          alt={""}
+                          fill
+                          className="object-cover rounded-md lg:rounded-xl"
+                        />
                       </div>
                     </Link>
-                    <div className="flex flex-col items-center">
-                      <button>
-                        <PiDotsThreeVerticalBold className="text-4xl" />
-                      </button>
+                    <div className="flex justify-between pt-2">
+                      <Link href={"/"}>
+                        <div className="flex flex-col gap-1">
+                          <p className="line-clamp-2 text-base 2xl:text-2xl">
+                            {data.title}
+                          </p>
+                          <p className="line-clamp-1  text-xs 2xl:text-lg">
+                            {data.views} views
+                          </p>
+                        </div>
+                      </Link>
+                      <div className="flex flex-col items-center">
+                        <button>
+                          <PiDotsThreeVerticalBold className="2xl:text-4xl xl:text-xl" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className=" flex justify-center w-full my-2 relative  h-fit">
+                <hr className="bg-gray-300 w-full h-[1px] absolute bottom-4" />
+                <button
+                  className="bg-white z-50  text-xs lg:text-sm border-gray-300 hover:bg-gray-300 border rounded-3xl  py-2 px-8 lg:px-28 flex items-center gap-2"
+                  onClick={hiddenshorts}
+                >
+                  <span>Show more</span> <BsChevronDown />
+                </button>
+              </div>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-4 lg:gap-0 my-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  lg:w-[90] xl:w-[90vw]  lg:ml-7  ">
-              {shortsData.map((data) => (
-                <div
-                  className=" w-[40vw] md:w-[20vw] lg:w-[20vw] xl:w-[17vw] mb-5"
-                  key={data.id}
-                >
-                  <Link href={"/"}>
-                    <div className="w-[40vw] md:w-[28vw] lg:w-[20vw] xl:w-[17vw] h-[70vw] md:h-[50vw] lg:h-[40vw] xl:h-[30vw] relative">
-                      <Image
-                        src={data.profile}
-                        alt={""}
-                        fill
-                        className="object-cover rounded-md lg:rounded-xl"
-                      />
-                    </div>
-                  </Link>
-                  <div className="flex justify-between pt-2">
+            <div className="flex flex-col">
+              <div className="grid grid-cols-2 gap-4 lg:gap-0 my-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  lg:w-[90] xl:w-[90vw]  lg:ml-7  ">
+                {shortsData.map((data) => (
+                  <div
+                    className=" w-[40vw] md:w-[20vw] lg:w-[20vw] xl:w-[17vw] mb-5"
+                    key={data.id}
+                  >
                     <Link href={"/"}>
-                      <div className="flex flex-col gap-1">
-                        <p className="line-clamp-2 text-base 2xl:text-2xl">
-                          {data.title}
-                        </p>
-                        <p className="line-clamp-1  text-xs 2xl:text-lg">
-                          {data.views} views
-                        </p>
+                      <div className="w-[40vw] md:w-[28vw] lg:w-[20vw] xl:w-[17vw] h-[70vw] md:h-[50vw] lg:h-[40vw] xl:h-[30vw] relative">
+                        <Image
+                          src={data.profile}
+                          alt={""}
+                          fill
+                          className="object-cover rounded-md lg:rounded-xl"
+                        />
                       </div>
                     </Link>
-                    <div className="flex flex-col items-center">
-                      <button>
-                        <PiDotsThreeVerticalBold className="2xl:text-4xl" />
-                      </button>
+                    <div className="flex justify-between pt-2">
+                      <Link href={"/"}>
+                        <div className="flex flex-col gap-1">
+                          <p className="line-clamp-2 text-base 2xl:text-2xl">
+                            {data.title}
+                          </p>
+                          <p className="line-clamp-1  text-xs 2xl:text-lg">
+                            {data.views} views
+                          </p>
+                        </div>
+                      </Link>
+                      <div className="flex flex-col items-center">
+                        <button>
+                          <PiDotsThreeVerticalBold className="2xl:text-4xl" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className=" flex justify-center w-full my-2  relative h-fit">
+                <hr className="bg-gray-300 w-full h-[1px] absolute bottom-4" />
+                <button
+                  className="bg-white z-50  text-xs lg:text-sm border-gray-300 hover:bg-gray-300 border rounded-3xl  py-2 px-8 lg:px-28 flex items-center gap-2"
+                  onClick={hiddenshorts}
+                >
+                  <span>Show less</span> <BsChevronUp />
+                </button>
+              </div>
             </div>
           )}
-
-          <div className="">
-            <button
-              className="bg-gray-300 w-full flex justify-center py-2"
-              onClick={hiddenshorts}
-            >
-              <BsChevronDown />
-            </button>
-          </div>
         </div>
       )}
     </>
